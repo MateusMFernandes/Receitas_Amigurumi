@@ -125,8 +125,8 @@ body{
   border:1px solid rgba(255,255,255,0.384);
   border-radius:24px;
   box-shadow:0 15px 35px rgba(59,47,42,0.1);
-  width:100%;
-  margin:0 1rem;
+  width:calc(100% - 2rem);
+  margin:0 auto;
 }
 
 .hero-title{
@@ -160,7 +160,7 @@ body{
   display:flex;
   justify-content:center;
   gap:12px;
-  margin-top:0.5rem;
+  margin-top:2rem;
   margin-bottom:0.5rem;
 }
 .hero-dots input{
@@ -184,12 +184,30 @@ body{
 
 /* Sobre */
 .sobre{ padding:1.25rem 0 2rem; }
-.sobre h2{ font-family:"Playfair Display", serif; font-size:1.5rem; margin-bottom:.5rem; color:var(--text); }
 .sobre p{ color:var(--muted); max-width:800px; }
 
 /* Catálogo */
 .catalogo{ padding:1rem 0 3rem; }
-.catalogo h2{ font-family:"Playfair Display", serif; font-size:1.5rem; margin-bottom:1rem; color:var(--text); }
+
+/* h2 global — igual ao site 1 */
+h2{
+  font-family:"Playfair Display", serif;
+  font-size:2rem;
+  margin-bottom:1.5rem;
+  color:var(--text);
+  position:relative;
+  padding-left:15px;
+}
+h2::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:15%;
+  height:70%;
+  width:4px;
+  background-color:var(--accent);
+  border-radius:2px;
+}
 
 /* Grid */
 .grid-products{
@@ -254,28 +272,27 @@ body{
    ===================== */
 @media screen and (min-width:641px) and (max-width:900px){
   .hero{ height:80vh; width:100%; margin-top:2rem; padding-top:0; }
-  .hero-inner{ max-width:600px; }
-  .hero-dots{ margin-top:0.5rem; margin-bottom:1rem; }
+  .hero-inner{ max-width:600px; margin:0 auto; }
+  .hero-dots{ margin-top:1.75rem; margin-bottom:0.5rem; }
   #top{ padding:0.6rem 0; }
   .hero-title{ font-size:1.5rem; }
-  .hero-sub{ font-size:1.25rem; }
+  .hero-sub{ font-size:1rem; }
   .grid-products{ grid-template-columns:repeat(2,1fr); }
   .product-card img{ height:200px; }
   .container{ padding:0 1.25rem; }
   .catalogo{ background-color:var(--bg); }
-  .container > p{ font-size:.6rem; }
-  .container > h2{ font-size:1.2rem; }
+  .sobre p{ font-size:1rem; line-height:1.65; }
+  .catalogo .desc{ font-size:0.9rem; }
+  .container > h2{ font-size:1.3rem; }
   .footer-inner > p{ font-size:1rem; margin:0.5rem 0; }
   #contato > p{ font-size:1rem; }
-  #contato > ul > li{ font-size:1rem; }
-  #sobre > p {font-size: 1.05rem;}
   .contact-list > li{ font-size:0.8rem; }
 }
 
 @media (max-width:640px){
-  .hero-title{ font-size:1.75rem; }
-  .container{ padding:0 1.5rem;}
-  .header-inner{ padding:.4rem 0;}
+  .hero-title{ font-size:2.0rem; }
+  .container{ padding:0 1.5rem; }
+  .header-inner{ padding:.6rem 0; }
 
   /* Menu mobile — igual ao site 1 */
   .main-nav{
@@ -301,14 +318,16 @@ body{
   .grid-products{ grid-template-columns:1fr; }
   .product-card img{ height:260px; }
   .logo{ padding:0 1rem; }
-  .hero{ padding:0.5rem 0 1rem; }
-  .hero-dots{ margin-top:0.5rem; margin-bottom:0.5rem; }
+  .hero{ padding:2rem 0 1rem; }
+  .hero-inner{ width:calc(100% - 2rem); margin:0 auto; }
+  .hero-dots{ margin-top:1.5rem; margin-bottom:0.25rem; }
+  h2{ font-size:1.6rem; }
 }
 
 @media (min-width:901px){
   .hero-title{ font-size:1.5rem; }
   .header-inner{ padding:0.6rem 0.8rem; }
-  .hero-inner{ max-width:1000px; }
+  .hero-inner{ max-width:1000px; margin:0 auto; }
   .hero{ height:80vh; width:100%; background-size:cover; margin-top:0; }
   .hero-dots{ margin-top:2rem; margin-bottom:0.5rem; }
   .catalogo{ padding:0 1.5rem; max-width:1100px; }
