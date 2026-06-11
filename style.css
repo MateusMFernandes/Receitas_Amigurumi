@@ -429,3 +429,42 @@ a:focus, button:focus, .product-card:focus{ outline:3px solid rgba(217,154,108,0
 }
 
 .sr-only{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+/* ==========================================================================
+   IMPLEMENTAÇÃO EXCLUSIVA GOOGLE ADSENSE - EVITAR CLS (CORE WEB VITALS)
+   ========================================================================== */
+
+.adsense-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Espaço reservado para o Display Responsivo Superior (Top) */
+.ad-top {
+  min-height: 90px;
+  max-height: 280px;
+}
+
+/* Espaço reservado para o Display Responsivo do Meio */
+.ad-middle {
+  min-height: 250px;
+}
+
+/* Espaço reservado para o Multiplex Inferior */
+.ad-multiplex {
+  min-height: 400px;
+}
+
+@media (max-width: 640px) {
+  .ad-top {
+    min-height: 100px;
+  }
+  .ad-middle {
+    min-height: 250px;
+  }
+}
