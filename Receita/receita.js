@@ -1,20 +1,26 @@
-// ano automático
-document.getElementById("year").textContent = new Date().getFullYear();
+// Ano automático
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// compartilhar
+// Header shadow on scroll
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  window.addEventListener('scroll', () => {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+}
+
+// Botão compartilhar — compartilha o link da receita
 document.getElementById("btnShare").addEventListener("click", () => {
-  const title = document.getElementById("recipe-title").innerText;
-  const text = document.getElementById("recipe-text").innerText;
+  const title = document.querySelector(".recipe-title")?.innerText || document.title;
   const url = window.location.href;
 
   if (navigator.share) {
-    navigator.share({
-      title,
-      text,
-      url
-    });
+    navigator.share({ title, url })
+      .catch(() => {}); // ignora cancelamento do usuário
   } else {
-    navigator.clipboard.writeText(`${title}\n\n${text}\n\n${url}`);
-    alert("Link e receita copiados para compartilhamento!");
+    navigator.clipboard.writeText(url)
+      .then(() => alert("Link copiado para a área de transferência!"))
+      .catch(() => alert("Não foi possível copiar o link. Copie manualmente: " + url));
   }
 });

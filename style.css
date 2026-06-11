@@ -286,7 +286,7 @@ h2::before{
   .container > h2{ font-size:1.3rem; }
   .footer-inner > p{ font-size:1rem; margin:0.5rem 0; }
   #contato > p{ font-size:1rem; }
-  .contact-list > li{ font-size:0.8rem; }
+  .contact-list > li{ font-size:1rem; }
 }
 
 @media (max-width:640px){
