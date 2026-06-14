@@ -261,7 +261,41 @@ h2::before{
 
 /* Contato */
 .contato{ padding:2rem 0; background:linear-gradient(180deg,rgba(241,224,207,0.28),transparent 40%); color:var(--text); }
-.contact-list{ list-style:none; padding:0; margin:0; color:var(--muted); }
+.contact-list { list-style:none; padding:0; margin:0; color:var(--muted); }
+
+.contact-list li {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.contact-list a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+.inst { list-style:none; padding:0; margin:0; color:var(--muted); }
+
+.inst {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.inst {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.inst:hover {
+  text-decoration: underline;
+}
 
 /* Footer */
 .site-footer{ padding:1rem 0; background:transparent; border-top:1px solid rgba(0,0,0,0.04); }
